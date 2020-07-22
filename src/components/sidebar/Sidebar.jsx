@@ -64,7 +64,7 @@ export default function Sidebar() {
         <Row>
           {contacts.map((contact, key) => (
             <Col key={key}>
-              <a href={contact.link}>
+              <a href={contact.link} target="_blank" rel="noopener noreferrer">
                 <img
                   src={contact.logo}
                   alt={contact.name}
@@ -78,9 +78,7 @@ export default function Sidebar() {
         <hr />
         {items.map((item, i) => (
           <NavItem className={styles.link} key={i}>
-            <NavLink to={item.path} >
-              {item.name}
-            </NavLink>
+            <NavLink to={item.path}>{item.name}</NavLink>
           </NavItem>
         ))}
       </Nav>
