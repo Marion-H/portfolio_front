@@ -1,0 +1,34 @@
+.navbar {
+  width: 16vw;
+  justify-content: center;
+  background-color: #353535;
+  height: 100vh;
+  color: white;
+}
+
+.navbar h2{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom : 0
+  }
+  .navbar h3 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .colNav {
+    background-color: #353535;
+  }
+  
+  .link {
+    margin: 10px 10px;
+  }
+  
+  .link a {
+    color: white;
+    font-size: 20px;
+  }
+
+  .link a:hover {
+    color: #c3073F;
+    text-decoration : none
+  }
