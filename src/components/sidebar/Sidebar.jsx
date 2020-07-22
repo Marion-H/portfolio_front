@@ -65,7 +65,7 @@ export default function Sidebar() {
           {contacts.map((contact) => (
             <Col>
               <a href={contact.link}>
-                <img src={contact.logo} alt={contact.name} width="30%" />
+                <img src={contact.logo} alt={contact.name} width="30%" target="_blank"/>
               </a>
             </Col>
           ))}

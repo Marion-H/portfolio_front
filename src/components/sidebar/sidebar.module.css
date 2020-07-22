@@ -29,5 +29,6 @@
   }
 
   .link a:hover {
-    color: #c3073F
+    color: #c3073F;
+    text-decoration : none
   }
