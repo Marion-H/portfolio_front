@@ -39,7 +39,7 @@ export default function Sidebar() {
   }
 
   return (
-    <Navbar center className={`${styles.navbar} fixed-top`}>
+    <Navbar center="true" className={`${styles.navbar} fixed-top`}>
       <Nav vertical>
         <Row>
           <Col>
@@ -62,23 +62,26 @@ export default function Sidebar() {
           </Col>
         </Row>
         <Row>
-          {contacts.map((contact) => (
-            <Col>
+          {contacts.map((contact, key) => (
+            <Col key={key}>
               <a href={contact.link}>
-                <img src={contact.logo} alt={contact.name} width="30%" target="_blank"/>
+                <img
+                  src={contact.logo}
+                  alt={contact.name}
+                  width="30%"
+                  target="_blank"
+                />
               </a>
             </Col>
           ))}
         </Row>
         <hr />
         {items.map((item, i) => (
-          <>
-            <NavItem className={styles.link}>
-              <NavLink to={item.path} key={i}>
-                {item.name}
-              </NavLink>
-            </NavItem>
-          </>
+          <NavItem className={styles.link} key={i}>
+            <NavLink to={item.path} >
+              {item.name}
+            </NavLink>
+          </NavItem>
         ))}
       </Nav>
     </Navbar>
