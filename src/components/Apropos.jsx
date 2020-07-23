@@ -30,9 +30,9 @@ export default function Apropos() {
     return <div>{error}</div>;
   }
   return (
-    <Container>
-      <Row className={styles.rowDescription}>
-        <Col lg="4">
+    <Container className={styles.container}>
+      <Row className={`${styles.rowDescription} d-flex align-items-center`}>
+        <Col lg="6">
           <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80" alt="logo" className="rounded-circle" width="100%" height="100%" />
         </Col>
         <Col lg="6">
@@ -42,9 +42,10 @@ export default function Apropos() {
           minus exercitationem sit illo?
         </Col>
       </Row>
+    
       <Row className="d-flex justify-content-center">
         {skills.map((skill, i) => (
-          <Col key={i} >
+          <Col key={i} lg="3" md="4">
             <img src={skill.logo} alt={skill.name} width="100vw" />
             <p>{skill.description}</p>
           </Col>

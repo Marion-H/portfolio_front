@@ -44,7 +44,7 @@ export default function Sidebar() {
   }
 
   return (
-    <Navbar className={`${styles.navbar} fixed-top `}>
+    <Navbar className={`${styles.navbar}`}>
       <Nav vertical className={styles.navVertical}>
         <img
           src={logo}

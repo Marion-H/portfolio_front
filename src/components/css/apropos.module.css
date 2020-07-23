@@ -1,8 +1,9 @@
-.colContainer{
-
+.container {
+  margin-top: 40px;
+  /* margin-right: 10px; */
 }
 
 .rowDescription {
-  height: 70vh;
-  padding-top:30vh
+  /* height: 40vh; */
+  margin-bottom: 80px;
 }
