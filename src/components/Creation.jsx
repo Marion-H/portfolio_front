@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Spinner } from "reactstrap";
+import { Row, Col, Spinner, Container } from "reactstrap";
 import Axios from "axios";
 import ReactHtmlParser from "react-html-parser";
-
 
 export default function Creation() {
   const [projects, setProjects] = useState([]);
@@ -29,33 +28,24 @@ export default function Creation() {
     return <div>{error}</div>;
   }
   return (
-    <Col>
+    <Container>
       {projects.map((project) => (
-        <Row>
-          <Col>
-            {project.title}
+        <Row className="d-flex align-items-center">
+          <Col lg="6" xs="12">
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <h2>{project.title}</h2>
+            </a>
             <Row>
               <Col>{ReactHtmlParser(project.description)}</Col>
             </Row>
-            <Row>
-              <Col>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  lien
-                </a>
-              </Col>
-            </Row>
           </Col>
-          <Col>
+          <Col lg="6" xs="12">
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <img src={project.image} alt={project.title} width="100%" />
             </a>
           </Col>
         </Row>
       ))}
-    </Col>
+    </Container>
   );
 }

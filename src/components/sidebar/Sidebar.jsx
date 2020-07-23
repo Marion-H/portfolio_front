@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav, NavItem, Row, Col, Spinner } from "reactstrap";
+import { Navbar, Nav, NavItem, Row, Col, Spinner, Collapse } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
 import styles from "./sidebar.module.css";
 import logo from "./avatar-placeholder.gif";
 import Axios from "axios";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const items = [
-  { name: "A propos", path: "/apropos" },
+  { name: "A propos", path: "/" },
   { name: "Créations", path: "/creations" },
   { name: "Formations", path: "/formations" },
   { name: "Contact", path: "/contact" },
@@ -17,6 +18,10 @@ export default function Sidebar() {
   const [contacts, setContacts] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
 
   const getContact = async () => {
     try {
@@ -39,46 +44,39 @@ export default function Sidebar() {
   }
 
   return (
-    <Navbar center="true" className={`${styles.navbar} fixed-top`}>
-      <Nav vertical>
-        <Row>
-          <Col>
-            <img
-              src={logo}
-              alt="Marion Hourdou"
-              width="100vw"
-              className="rounded-circle"
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h3>Marion HOURDOU</h3>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h4>Web Developpeuse</h4>
-          </Col>
-        </Row>
-        <Row>
+    <Navbar className={`${styles.navbar} fixed-top `}>
+      <Nav vertical className={styles.navVertical}>
+        <img
+          src={logo}
+          alt="Marion Hourdou"
+          width="100vw"
+          className="rounded-circle"
+        />
+        <h2>Marion HOURDOU</h2>
+        <h4>Web Developpeuse</h4>
+
+        <Row className="">
           {contacts.map((contact, key) => (
-            <Col key={key}>
+            <Col key={key} lg="2" style={{ margin: "auto" }}>
               <a href={contact.link} target="_blank" rel="noopener noreferrer">
                 <img
                   src={contact.logo}
                   alt={contact.name}
-                  width="30%"
+                  width="30vw"
                   target="_blank"
                 />
               </a>
             </Col>
           ))}
         </Row>
-        <hr />
+
+        <hr className={styles.hr} />
+
         {items.map((item, i) => (
-          <NavItem className={styles.link} key={i}>
-            <NavLink to={item.path}>{item.name}</NavLink>
+          <NavItem key={i}>
+            <NavLink className={styles.link} to={item.path}>
+              {item.name}
+            </NavLink>
           </NavItem>
         ))}
       </Nav>
