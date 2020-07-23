@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Spinner, Col, Row } from "reactstrap";
 import Axios from "axios";
-import ReactHtmlParser from "react-html-parser"
+import ReactHtmlParser from "react-html-parser";
 
 export default function Formations() {
   const [formations, setFormations] = useState([]);
@@ -29,13 +29,13 @@ export default function Formations() {
   }
   return (
     <Col>
-      {formations.map((formation) => (
-        <Row>
+      {formations.map((formation, i) => (
+        <Row key={i}>
           <Col>
             <p>{formation.diploma}</p>
             <p>{formation.year}</p>
-      <p>{formation.school}</p>
-      {ReactHtmlParser(formation.description)}
+            <p>{formation.school}</p>
+            {ReactHtmlParser(formation.description)}
           </Col>
         </Row>
       ))}

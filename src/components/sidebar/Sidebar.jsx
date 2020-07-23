@@ -61,14 +61,14 @@ export default function Sidebar() {
             <h4>Web Developpeuse</h4>
           </Col>
         </Row>
-        <Row>
+        <Row className="d-flex justify-content-center">
           {contacts.map((contact, key) => (
-            <Col key={key}>
+            <Col key={key} lg="3">
               <a href={contact.link} target="_blank" rel="noopener noreferrer">
                 <img
                   src={contact.logo}
                   alt={contact.name}
-                  width="30%"
+                  width="30vw"
                   target="_blank"
                 />
               </a>

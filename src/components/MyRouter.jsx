@@ -6,7 +6,6 @@ import Sidebar from "./sidebar/Sidebar";
 import Apropos from "./Apropos";
 import Creation from "./Creation";
 
-import styles from "./sidebar/sidebar.module.css";
 import Formations from "./Formations";
 import Contact from "./Contact";
 

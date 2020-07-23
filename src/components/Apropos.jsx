@@ -42,9 +42,9 @@ export default function Apropos() {
           minus exercitationem sit illo?
         </Col>
       </Row>
-      <Row>
+      <Row className="d-flex justify-content-center">
         {skills.map((skill, i) => (
-          <Col key={i}>
+          <Col key={i} lg={{ size: "3" }} sm={{ size: "3" }} >
             <img src={skill.logo} alt={skill.name} width="100vw" />
             <p>{skill.description}</p>
           </Col>
