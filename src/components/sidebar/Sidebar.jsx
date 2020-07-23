@@ -53,7 +53,7 @@ export default function Sidebar() {
         </Row>
         <Row>
           <Col>
-            <h3>Marion HOURDOU</h3>
+            <h2>Marion HOURDOU</h2>
           </Col>
         </Row>
         <Row>
@@ -61,6 +61,7 @@ export default function Sidebar() {
             <h4>Web Developpeuse</h4>
           </Col>
         </Row>
+
         <Row className="d-flex justify-content-center">
           {contacts.map((contact, key) => (
             <Col key={key} lg="3">
@@ -75,7 +76,9 @@ export default function Sidebar() {
             </Col>
           ))}
         </Row>
-        <hr />
+
+        <hr className={styles.hr} />
+
         {items.map((item, i) => (
           <NavItem className={styles.link} key={i}>
             <NavLink to={item.path}>{item.name}</NavLink>
