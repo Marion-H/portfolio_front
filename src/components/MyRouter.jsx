@@ -8,6 +8,7 @@ import Creation from "./Creation";
 
 import styles from "./sidebar/sidebar.module.css";
 import Formations from "./Formations";
+import Contact from "./Contact";
 
 export default function MyRouter() {
   return (
@@ -22,7 +23,7 @@ export default function MyRouter() {
             <Route path="/apropos" component={Apropos} />
             <Route path="/creations" component={Creation} />
             <Route path="/formations" component={Formations} />
-
+            <Route path="/contact" component={Contact} />
           </Switch>
         </Row>
       </Router>
