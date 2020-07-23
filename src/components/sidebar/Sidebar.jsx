@@ -8,7 +8,7 @@ import Axios from "axios";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const items = [
-  { name: "A propos", path: "/apropos" },
+  { name: "A propos", path: "/" },
   { name: "Créations", path: "/creations" },
   { name: "Formations", path: "/formations" },
   { name: "Contact", path: "/contact" },
@@ -45,48 +45,41 @@ export default function Sidebar() {
 
   return (
     <Navbar className={`${styles.navbar} fixed-top `}>
-      <GiHamburgerMenu onClick={toggle} />
-      <Collapse isOpen={isOpen} toggle={toggle}>
-        <Nav vertical className={styles.navVertical} toggle={toggle}>
-          <img
-            src={logo}
-            alt="Marion Hourdou"
-            width="100vw"
-            className="rounded-circle"
-          />
-          <h2>Marion HOURDOU</h2>
-          <h4>Web Developpeuse</h4>
+      <Nav vertical className={styles.navVertical}>
+        <img
+          src={logo}
+          alt="Marion Hourdou"
+          width="100vw"
+          className="rounded-circle"
+        />
+        <h2>Marion HOURDOU</h2>
+        <h4>Web Developpeuse</h4>
 
-          <Row className="">
-            {contacts.map((contact, key) => (
-              <Col key={key} lg="2" style={{ margin: "auto" }}>
-                <a
-                  href={contact.link}
+        <Row className="">
+          {contacts.map((contact, key) => (
+            <Col key={key} lg="2" style={{ margin: "auto" }}>
+              <a href={contact.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={contact.logo}
+                  alt={contact.name}
+                  width="30vw"
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={contact.logo}
-                    alt={contact.name}
-                    width="30vw"
-                    target="_blank"
-                  />
-                </a>
-              </Col>
-            ))}
-          </Row>
-
-          <hr className={styles.hr} />
-
-          {items.map((item, i) => (
-            <NavItem key={i}>
-              <NavLink className={styles.link} to={item.path}>
-                {item.name}
-              </NavLink>
-            </NavItem>
+                />
+              </a>
+            </Col>
           ))}
-        </Nav>
-      </Collapse>
+        </Row>
+
+        <hr className={styles.hr} />
+
+        {items.map((item, i) => (
+          <NavItem key={i}>
+            <NavLink className={styles.link} to={item.path}>
+              {item.name}
+            </NavLink>
+          </NavItem>
+        ))}
+      </Nav>
     </Navbar>
   );
 }
