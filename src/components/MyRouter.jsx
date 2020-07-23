@@ -4,6 +4,7 @@ import { Col, Row } from "reactstrap";
 
 import Sidebar from "./sidebar/Sidebar";
 import Apropos from "./Apropos";
+import Creation from "./Creation";
 
 import styles from "./sidebar/sidebar.module.css";
 
@@ -18,6 +19,7 @@ export default function MyRouter() {
 
           <Switch>
             <Route path="/apropos" component={Apropos} />
+            <Route path="/creations" component={Creation} />
           </Switch>
         </Row>
       </Router>
