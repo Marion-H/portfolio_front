@@ -7,9 +7,12 @@ import {
   FormGroup,
   Input,
   Button,
+  Container,
 } from "reactstrap";
 import Axios from "axios";
 import { toast } from "react-toastify";
+
+import styles from "./css/contact.module.css"
 
 export default function Contact() {
   const [clientMail, setClientMail] = useState({});
@@ -70,8 +73,8 @@ export default function Contact() {
   }
 
   return (
-    <Col>
-      <Row>
+    <Container className={styles.container}>
+  
         <Form className="mr-3" onSubmit={postMessage}>
           <Row>
             <Col sm={6}>
@@ -151,8 +154,8 @@ export default function Contact() {
             </Col>
           </FormGroup>
         </Form>
-      </Row>
-      <Row>
+      
+      {/* <Row>
         {contacts.map((contact, key) => (
           <Col key={key}>
             <a href={contact.link} target="_blank" rel="noopener noreferrer">
@@ -165,7 +168,7 @@ export default function Contact() {
             </a>
           </Col>
         ))}
-      </Row>
-    </Col>
+      </Row> */}
+    </Container>
   );
 }
