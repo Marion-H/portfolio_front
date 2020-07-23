@@ -7,6 +7,7 @@ import Apropos from "./Apropos";
 import Creation from "./Creation";
 
 import styles from "./sidebar/sidebar.module.css";
+import Formations from "./Formations";
 
 export default function MyRouter() {
   return (
@@ -20,6 +21,8 @@ export default function MyRouter() {
           <Switch>
             <Route path="/apropos" component={Apropos} />
             <Route path="/creations" component={Creation} />
+            <Route path="/formations" component={Formations} />
+
           </Switch>
         </Row>
       </Router>
