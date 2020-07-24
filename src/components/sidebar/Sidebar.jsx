@@ -45,7 +45,7 @@ export default function Sidebar() {
 
   return (
     <header className={styles.header}>
-      <Navbar className={`${styles.navbar}`}>
+      <Navbar className={`${styles.navbar}`} expand="md">
         <Nav vertical className={`${styles.navVertical}`}>
           <img
             src={logo}
