@@ -1,9 +1,24 @@
+.header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 200px;
+  scrollbar-width: thin;
+  background-color: #7e685a;
+
+}
+
+
+
 .navbar {
-  width: 16vw;
+  /* width: 16vw;
   background-color: #7e685a;
   height: 100vh;
-  color: white;
-}
+  color: white; */
+} 
+
+
 .navVertical {
   margin: 0 auto;
   text-align: center;
