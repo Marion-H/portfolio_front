@@ -11,8 +11,9 @@ import {
 } from "reactstrap";
 import Axios from "axios";
 import { toast } from "react-toastify";
+import Slide from "react-reveal/Slide";
 
-import styles from "./css/contact.module.css"
+import styles from "./css/contact.module.css";
 
 export default function Contact() {
   const [clientMail, setClientMail] = useState({});
@@ -74,101 +75,89 @@ export default function Contact() {
 
   return (
     <Container className={styles.container}>
-  
-        <Form className="mr-3" onSubmit={postMessage}>
-          <Row>
-            <Col sm={6}>
-              <Input
-                // className={styles.input}
-                onChange={(e) => {
-                  setClientMail({ ...clientMail, name: e.target.value });
-                }}
-                type="text"
-                name="lastname"
-                id="lastname"
-                placeholder="Nom"
-                required
-              />
-            </Col>
-            <Col sm={6}>
-              <Input
-                // className={styles.input}
-                onChange={(e) => {
-                  setClientMail({ ...clientMail, surname: e.target.value });
-                }}
-                type="text"
-                name="firstname"
-                id="firstname"
-                placeholder="Prénom"
-                required
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={6}>
-              <Input
-                // className={styles.input}
-                onChange={(e) => {
-                  setClientMail({ ...clientMail, phone: e.target.value });
-                }}
-                type="text"
-                name="phone"
-                id="phone"
-                placeholder="Numéro de téléphone"
-                
-                required
-              />
-            </Col>
-            <Col sm={6}>
-              <Input
-                // className={styles.input}
-                onChange={(e) => {
-                  setClientMail({ ...clientMail, adresse: e.target.value });
-                }}
-                type="text"
-                name="adress"
-                id="adress"
-                placeholder="Adresse"
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={12}>
-              <Input
-                // className={styles.input}
-                onChange={(e) => {
-                  setClientMail({ ...clientMail, message: e.target.value });
-                }}
-                type="textarea"
-                name="message"
-                id="message"
-                placeholder="Votre message"
-                required
-              />
-            </Col>
-          </Row>
+      <Form className="mr-3" onSubmit={postMessage}>
+        <Slide right>
+          <div>
+            <h2 style={{ color: "#e7717d", "font-weight": "700" }}>Contact</h2>
+            <Row>
+              <Col sm={6}>
+                <Input
+                  className={styles.input}
+                  onChange={(e) => {
+                    setClientMail({ ...clientMail, name: e.target.value });
+                  }}
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  placeholder="Nom"
+                  required
+                />
+              </Col>
+              <Col sm={6}>
+                <Input
+                  className={styles.input}
+                  onChange={(e) => {
+                    setClientMail({ ...clientMail, surname: e.target.value });
+                  }}
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="Prénom"
+                  required
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={6}>
+                <Input
+                  className={styles.input}
+                  onChange={(e) => {
+                    setClientMail({ ...clientMail, phone: e.target.value });
+                  }}
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="Numéro de téléphone"
+                  required
+                />
+              </Col>
+              <Col sm={6}>
+                <Input
+                  className={styles.input}
+                  onChange={(e) => {
+                    setClientMail({ ...clientMail, adresse: e.target.value });
+                  }}
+                  type="text"
+                  name="adress"
+                  id="adress"
+                  placeholder="Adresse"
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={12}>
+                <Input
+                  className={styles.input}
+                  onChange={(e) => {
+                    setClientMail({ ...clientMail, message: e.target.value });
+                  }}
+                  type="textarea"
+                  name="message"
+                  id="message"
+                  placeholder="Votre message"
+                  required
+                />
+              </Col>
+            </Row>
 
-          <FormGroup check row>
-            <Col sm={12}>
-              <Button>Envoyer</Button>
-            </Col>
-          </FormGroup>
-        </Form>
-      
-      {/* <Row>
-        {contacts.map((contact, key) => (
-          <Col key={key}>
-            <a href={contact.link} target="_blank" rel="noopener noreferrer">
-              <img
-                src={contact.logo}
-                alt={contact.name}
-                width="30%"
-                target="_blank"
-              />
-            </a>
-          </Col>
-        ))}
-      </Row> */}
+            <FormGroup check row>
+              <Col sm={12}>
+                <Button>Envoyer</Button>
+              </Col>
+            </FormGroup>
+          </div>
+        </Slide>
+      </Form>
     </Container>
   );
 }
