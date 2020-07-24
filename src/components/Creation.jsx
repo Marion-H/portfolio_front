@@ -3,6 +3,10 @@ import { Row, Col, Spinner, Container } from "reactstrap";
 import Axios from "axios";
 import ReactHtmlParser from "react-html-parser";
 
+
+import styles from "./css/creation.module.css"
+
+
 export default function Creation() {
   const [projects, setProjects] = useState([]);
   const [error, setError] = useState("");
@@ -28,7 +32,7 @@ export default function Creation() {
     return <div>{error}</div>;
   }
   return (
-    <Container>
+    <Container  className={styles.container}>
       {projects.map((project) => (
         <Row className="d-flex align-items-center">
           <Col lg="6" xs="12">

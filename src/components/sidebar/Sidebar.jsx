@@ -44,42 +44,48 @@ export default function Sidebar() {
   }
 
   return (
-    <Navbar className={`${styles.navbar}`}>
-      <Nav vertical className={styles.navVertical}>
-        <img
-          src={logo}
-          alt="Marion Hourdou"
-          width="100vw"
-          className="rounded-circle"
-        />
-        <h2>Marion HOURDOU</h2>
-        <h4>Web Developpeuse</h4>
+    <header className={styles.header}>
+      <Navbar className={`${styles.navbar}`}>
+        <Nav vertical className={`${styles.navVertical}`}>
+          <img
+            src={logo}
+            alt="Marion Hourdou"
+            width="100vw"
+            className="rounded-circle"
+          />
+          <h2>Marion HOURDOU</h2>
+          <h4>Web Developpeuse</h4>
 
-        <Row className="">
-          {contacts.map((contact, key) => (
-            <Col key={key} lg="2" style={{ margin: "auto" }}>
-              <a href={contact.link} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={contact.logo}
-                  alt={contact.name}
-                  width="30vw"
+          <Row className="">
+            {contacts.map((contact, key) => (
+              <Col key={key} lg="2" style={{ margin: "auto" }}>
+                <a
+                  href={contact.link}
                   target="_blank"
-                />
-              </a>
-            </Col>
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={contact.logo}
+                    alt={contact.name}
+                    width="30vw"
+                    target="_blank"
+                  />
+                </a>
+              </Col>
+            ))}
+          </Row>
+
+          <hr className={styles.hr} />
+
+          {items.map((item, i) => (
+            <NavItem key={i}>
+              <NavLink className={styles.link} to={item.path}>
+                {item.name}
+              </NavLink>
+            </NavItem>
           ))}
-        </Row>
-
-        <hr className={styles.hr} />
-
-        {items.map((item, i) => (
-          <NavItem key={i}>
-            <NavLink className={styles.link} to={item.path}>
-              {item.name}
-            </NavLink>
-          </NavItem>
-        ))}
-      </Nav>
-    </Navbar>
+        </Nav>
+      </Navbar>
+    </header>
   );
 }
