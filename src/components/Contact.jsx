@@ -54,7 +54,7 @@ export default function Contact() {
         <p><b>MESSAGE:</b>
  ${clientMail.message}</p>`,
         subject: `Message du site Portfolio de MR/Mme ${clientMail.surname}  ${clientMail.name}`,
-        emailTo: "doudou6500@gmail.com",
+        emailTo: "testlookup1@gmail.com",
       });
       notifySuccess();
     } catch (err) {
